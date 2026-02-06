@@ -31,3 +31,14 @@ export default function App() {
     </BrowserRouter>
   );
 }
+import { calculateTierPrices } from './engine/pricingEngine';
+
+const tiers = calculateTierPrices({
+  laborCost,
+  materialCost,
+  overheadPct: 0.25,
+});
+<PriceTier tier="recommended" price={tiers.recommended} margin={35} />
+<PriceTier tier="minimum" price={tiers.minimum} margin={15} />
+<PriceTier tier="destructive" price={tiers.destructive} margin={5} />
+import { calculateTierPrices } from './engine/pricingEngine';
