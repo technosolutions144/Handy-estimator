@@ -17,6 +17,11 @@ const STEPS = [
   { label: 'Costs', shortLabel: 'Costs' },
   { label: 'Pricing', shortLabel: 'Price' },
 ];
+const tiers = calculateTierPrices({
+  laborCost: formData.labor_hours * formData.labor_rate,
+  materialCost: formData.materials_cost,
+  overheadPct: formData.add_overhead_pct,
+});
 
 function buildInitialData(profile: Profile | null): QuoteFormData {
   const trade = profile?.default_trade ?? 'general';
@@ -146,3 +151,4 @@ export default function NewQuote() {
     </div>
   );
 }
+import { calculateTierPrices } from '../../engine/pricingEngine';
