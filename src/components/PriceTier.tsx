@@ -77,3 +77,6 @@ export default function PriceTier({ tier, price, margin, isSelected, onSelect }:
     </button>
   );
 }
+<PriceTier tier="recommended" price={tiers.recommended} margin={35} />
+<PriceTier tier="minimum" price={tiers.minimum} margin={15} />
+<PriceTier tier="destructive" price={tiers.destructive} margin={5} />
