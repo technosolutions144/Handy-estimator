@@ -179,3 +179,5 @@ export default function StepReview({ data, pricing, onBack, onSave, saving }: Pr
     </div>
   );
 }
+import PriceTier from '../../components/PriceTier';
+<PriceTier tier="recommended" price={tiers.recommended} margin={35} />
